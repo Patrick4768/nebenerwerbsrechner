@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebenerwerbsrechner 2026 - Steuern, Gewinn & Netto berechnen</title>
+    <meta
+      name="description"
+      content="Kostenloser Nebenerwerbsrechner fuer Deutschland: Schaetze Gewinn, zusaetzliche Steuer, Netto-Zusatz, Stundenlohn, Kleinunternehmerregelung und Steuerruecklage."
+    />
+    <meta
+      name="keywords"
+      content="Nebenerwerbsrechner, Nebenerwerb Rechner, Nebengewerbe Steuer berechnen, Kleinunternehmerregelung, Steuerruecklage, Netto-Stundenlohn Selbststaendigkeit"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Nebenerwerbsrechner 2026" />
+    <meta
+      property="og:description"
+      content="Pruefe grob, ob sich ein Nebengewerbe neben deinem Hauptjob lohnt."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <link rel="canonical" href="https://example.com/" />
+    <link rel="stylesheet" href="styles.css?v=20260528l" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Nebenerwerbsrechner 2026",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "inLanguage": "de-DE",
+        "description": "Kostenloser Rechner zur groben Einschaetzung, ob sich ein Nebengewerbe neben dem Hauptjob lohnt.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Nebenerwerbsrechner Startseite">
+        <span class="brand-mark">NR</span>
+        <span>Nebenerwerbsrechner</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#rechner">Rechner</a>
+        <a href="#erklaerung">Erkl&auml;rung</a>
+        <a href="#faq">FAQ</a>
+        <a href="#rechtliches">Rechtliches</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Kostenloser Rechner f&uuml;r Deutschland</p>
+          <h1>Lohnt sich dein Nebengewerbe neben dem Hauptjob?</h1>
+          <p class="hero-copy">
+            Sch&auml;tze Umsatz, Gewinn, zus&auml;tzliche Steuer, Netto-Zusatz und echten
+            Stundenlohn. Der Rechner hilft dir einzusch&auml;tzen, ob sich dein Nebengewerbe neben
+            dem Hauptjob wirklich lohnt.
+          </p>
+          <p class="hero-benefit">
+            In 2 Minuten siehst du, wie viel von deinem Nebengewerbe nach Steuer,
+            Umsatzsteuer und R&uuml;cklage ungef&auml;hr &uuml;brig bleibt.
+          </p>
+          <div class="trust-list" aria-label="Vertrauenshinweise">
+            <span>Keine Anmeldung</span>
+            <span>Keine Datenspeicherung</span>
+            <span>F&uuml;r Deutschland</span>
+            <span>Grobe Orientierung, keine Steuerberatung</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#rechner">Jetzt berechnen</a>
+            <a class="button secondary" href="#erklaerung">Wie wird gerechnet?</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Kurzergebnis Beispiel">
+          <div class="panel-label">Beispiel</div>
+          <strong>8.400 &euro; Umsatz</strong>
+          <span>2.100 &euro; Ausgaben</span>
+          <span>ca. 315 &euro; Netto-Zusatz pro Monat</span>
+          <span class="status-pill good">lohnt sich</span>
+          <p class="mini-note">Bei wenig Wochenstunden kann auch ein kleiner Nebenverdienst attraktiv sein.</p>
+        </aside>
+      </section>
+
+      <section class="notice">
+        <strong>Wichtiger Hinweis:</strong>
+        Dieser Rechner ersetzt keine Steuerberatung. Alle Ergebnisse sind grobe, unverbindliche
+        Sch&auml;tzungen und k&ouml;nnen deine echte Steuer-, Krankenversicherungs- oder
+        Gewerbesteuer-Situation nicht vollst&auml;ndig abbilden.
+      </section>
+
+      <section class="calculator-section" id="rechner">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Rechner</p>
+          <h2>Deine Angaben</h2>
+          <p>Gib realistische Jahreswerte ein. Alles wird lokal im Browser berechnet.</p>
+        </div>
+
+        <div class="calculator-grid">
+          <form class="calculator" id="calculatorForm">
+            <div class="form-actions form-actions-top">
+              <button class="button small secondary" type="button" id="loadExample">Beispielwerte laden</button>
+              <button class="button small ghost" type="button" id="resetForm">Zur&uuml;cksetzen</button>
+            </div>
+
+            <div class="form-section">
+              <h3>Einkommen</h3>
+              <div class="form-section-grid">
+                <div class="form-group">
+                  <label for="mainIncome">Hauptjob-Brutto pro Jahr</label>
+                  <div class="input-wrap">
+                    <input id="mainIncome" name="mainIncome" type="number" min="0" step="100" value="48000" />
+                    <span>&euro;</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="maritalStatus">Familienstand</label>
+                  <select id="maritalStatus" name="maritalStatus">
+                    <option value="single" selected>Ledig / Einzelveranlagung</option>
+                    <option value="married">Verheiratet / Zusammenveranlagung</option>
+                  </select>
+                  <small>Vereinfacht ber&uuml;cksichtigt. Die echte Steuer h&auml;ngt von vielen Faktoren ab.</small>
+                </div>
+                <div class="form-group spouse-field" id="spouseIncomeGroup" hidden>
+                  <label for="spouseIncome">Brutto Ehepartner pro Jahr</label>
+                  <div class="input-wrap">
+                    <input id="spouseIncome" name="spouseIncome" type="number" min="0" step="100" placeholder="z. B. 36000" />
+                    <span>&euro;</span>
+                  </div>
+                  <small>Wird nur f&uuml;r die grobe Splitting-Sch&auml;tzung genutzt.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Nebengewerbe</h3>
+              <div class="form-section-grid">
+                <div class="form-group">
+                  <label for="sideRevenue">Geplanter Umsatz pro Jahr</label>
+                  <div class="input-wrap">
+                    <input id="sideRevenue" name="sideRevenue" type="number" min="0" step="100" value="12000" />
+                    <span>&euro;</span>
+                  </div>
+                  <small id="revenueHint">Bei Kleinunternehmern entspricht der Rechnungsbetrag in der Regel deinem Umsatz ohne ausgewiesene Umsatzsteuer.</small>
+                </div>
+                <div class="form-group">
+                  <label for="expenses">Betriebsausgaben pro Jahr</label>
+                  <div class="input-wrap">
+                    <input id="expenses" name="expenses" type="number" min="0" step="100" value="3500" />
+                    <span>&euro;</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="profit">Gewinn automatisch berechnet</label>
+                  <div class="input-wrap readonly">
+                    <input id="profit" name="profit" type="text" readonly value="8.500 &euro;" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="activityType">T&auml;tigkeit</label>
+                  <select id="activityType" name="activityType">
+                    <option value="service" selected>Dienstleistung / Beratung</option>
+                    <option value="trade">Handel / Verkauf</option>
+                    <option value="digital">Digitale Produkte</option>
+                    <option value="creative">Kreative T&auml;tigkeit</option>
+                    <option value="other">Sonstiges</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="customerType">Kundentyp</label>
+                  <select id="customerType" name="customerType">
+                    <option value="private" selected>&Uuml;berwiegend Privatkunden</option>
+                    <option value="b2b">&Uuml;berwiegend Gesch&auml;ftskunden / B2B</option>
+                    <option value="mixed">Gemischt</option>
+                  </select>
+                </div>
+                <div class="form-group" id="inputVatGroup" hidden>
+                  <label for="inputVatMode">Ausgaben enthalten Vorsteuer?</label>
+                  <select id="inputVatMode" name="inputVatMode">
+                    <option value="none" selected>Nein / nicht ber&uuml;cksichtigen</option>
+                    <option value="flat19">Ja, pauschal 19 %</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Aufwand &amp; Ziel</h3>
+              <div class="form-section-grid">
+                <div class="form-group">
+                  <label for="hours">Stunden pro Woche</label>
+                  <div class="input-wrap">
+                    <input id="hours" name="hours" type="number" min="0" step="0.5" value="8" />
+                    <span>Std.</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="targetHourly">Ziel-Netto-Stundenlohn</label>
+                  <div class="input-wrap">
+                    <input id="targetHourly" name="targetHourly" type="number" min="0" step="1" value="25" />
+                    <span>&euro; / Std.</span>
+                  </div>
+                  <small>Welchen Netto-Stundenlohn m&ouml;chtest du mindestens erreichen?</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Steuern &amp; Versicherung</h3>
+              <div class="form-section-grid">
+                <div class="form-group">
+                  <label for="state">Bundesland</label>
+                  <select id="state" name="state">
+                    <option value="bw">Baden-W&uuml;rttemberg</option>
+                    <option value="by" selected>Bayern</option>
+                    <option value="be">Berlin</option>
+                    <option value="bb">Brandenburg</option>
+                    <option value="hb">Bremen</option>
+                    <option value="hh">Hamburg</option>
+                    <option value="he">Hessen</option>
+                    <option value="mv">Mecklenburg-Vorpommern</option>
+                    <option value="ni">Niedersachsen</option>
+                    <option value="nw">Nordrhein-Westfalen</option>
+                    <option value="rp">Rheinland-Pfalz</option>
+                    <option value="sl">Saarland</option>
+                    <option value="sn">Sachsen</option>
+                    <option value="st">Sachsen-Anhalt</option>
+                    <option value="sh">Schleswig-Holstein</option>
+                    <option value="th">Th&uuml;ringen</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="churchTaxMode">Kirchensteuer</label>
+                  <select id="churchTaxMode" name="churchTaxMode">
+                    <option value="none" selected>Nein</option>
+                    <option value="auto">Ja, automatisch nach Bundesland</option>
+                    <option value="custom">Ja, eigener Satz</option>
+                  </select>
+                </div>
+                <div class="form-group" id="customChurchTaxGroup" hidden>
+                  <label for="customChurchTaxRate">Kirchensteuer-Satz</label>
+                  <div class="input-wrap">
+                    <input id="customChurchTaxRate" name="customChurchTaxRate" type="number" min="0" step="0.1" placeholder="z. B. 8 oder 9" />
+                    <span>%</span>
+                  </div>
+                </div>
+                <fieldset class="switch-group">
+                  <legend>Krankenversicherung</legend>
+                  <label><input type="radio" name="insurance" value="public" checked /> Gesetzlich</label>
+                  <label><input type="radio" name="insurance" value="private" /> Privat</label>
+                </fieldset>
+                <fieldset class="switch-group">
+                  <legend>Kleinunternehmerregelung</legend>
+                  <label><input type="radio" name="smallBusiness" value="yes" checked /> Ja</label>
+                  <label><input type="radio" name="smallBusiness" value="no" /> Nein</label>
+                </fieldset>
+                <fieldset class="switch-group">
+                  <legend>Gr&uuml;ndungsjahr?</legend>
+                  <label><input type="radio" name="foundingYear" value="yes" /> Ja</label>
+                  <label><input type="radio" name="foundingYear" value="no" checked /> Nein</label>
+                </fieldset>
+                <div class="form-group">
+                  <label for="tradeTaxRate">Optionaler Hebesatz Gewerbesteuer</label>
+                  <div class="input-wrap">
+                    <input id="tradeTaxRate" name="tradeTaxRate" type="number" min="0" step="1" placeholder="z. B. 380" />
+                    <span>%</span>
+                  </div>
+                  <small>Wenn leer, wird nur allgemein auf Gewerbesteuer hingewiesen.</small>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <aside class="results" id="results" aria-live="polite">
+            <div class="result-top">
+              <div>
+                <p class="eyebrow">Ergebnis</p>
+                <h2 id="ratingTitle">Lohnt sich</h2>
+                <p class="result-summary" id="resultSummary">Dein Ergebnis wird nach der Eingabe automatisch eingeordnet.</p>
+              </div>
+              <span class="traffic-light good" id="ratingBadge">Gr&uuml;n</span>
+            </div>
+
+            <div class="summary-metrics" aria-label="Wichtigste Ergebniswerte">
+              <div>
+                <span>Netto pro Monat</span>
+                <strong id="summaryMonthlyNet">0 &euro;</strong>
+              </div>
+              <div>
+                <span>Netto pro Stunde</span>
+                <strong id="summaryHourlyNet">0 &euro;</strong>
+              </div>
+            </div>
+
+            <div class="result-group">
+              <h3>Ergebnis</h3>
+              <div class="result-list">
+                <div class="result-item"><span>Gewinn vor Einkommensteuer</span><strong id="resultProfit">0 &euro;</strong></div>
+                <div class="result-item"><span>Netto-Zusatz pro Jahr</span><strong id="resultYearlyNet">0 &euro;</strong></div>
+                <div class="result-item"><span>Monatlicher Netto-Zusatz</span><strong id="resultMonthlyNet">0 &euro;</strong></div>
+                <div class="result-item"><span>Effektiver Netto-Stundenlohn</span><strong id="resultHourlyNet">0 &euro; / Std.</strong></div>
+              </div>
+            </div>
+            <div class="result-group" id="vatResultGroup">
+              <h3>Umsatzsteuer</h3>
+              <div class="vat-compact" id="vatCompactInfo"></div>
+              <div class="result-list">
+                <div class="result-item"><span>Brutto-Umsatz</span><strong id="resultRevenueGross">0 &euro;</strong></div>
+                <div class="result-item"><span>Netto-Umsatz</span><strong id="resultRevenueNet">0 &euro;</strong></div>
+                <div class="result-item"><span>Enthaltene Umsatzsteuer</span><strong id="resultOutputVat">0 &euro;</strong></div>
+                <div class="result-item"><span>Abziehbare Vorsteuer</span><strong id="resultInputVat">0 &euro;</strong></div>
+                <div class="result-item"><span>Grobe Umsatzsteuer-Zahllast</span><strong id="resultVatPayable">0 &euro;</strong></div>
+              </div>
+            </div>
+            <div class="result-group">
+              <h3>Steuer &amp; R&uuml;cklage</h3>
+              <div class="result-list">
+                <div class="result-item"><span>Grobe zus&auml;tzliche Einkommensteuer</span><strong id="resultTax">0 &euro;</strong></div>
+                <div class="result-item optional-tax-row" id="churchTaxRow" hidden><span>Grobe Kirchensteuer</span><strong id="resultChurchTax">0 &euro;</strong></div>
+                <div class="result-item optional-tax-row" id="tradeTaxRow" hidden><span>Grobe Gewerbesteuer</span><strong id="resultTradeTax">0 &euro;</strong></div>
+                <div class="result-item"><span>Grobe Steuer gesamt</span><strong id="resultTotalTax">0 &euro;</strong></div>
+                <div class="result-item"><span>Grobe Steuerquote auf Gewinn</span><strong id="resultTaxRate">0 %</strong></div>
+                <div class="result-item"><span>R&uuml;cklage Einkommensteuer/Kirche/Gewerbe</span><strong id="resultTaxReserve">0 &euro;</strong></div>
+                <div class="result-item"><span>R&uuml;cklage Umsatzsteuer</span><strong id="resultVatReserve">0 &euro;</strong></div>
+                <div class="result-item"><span>Empfohlene R&uuml;cklage gesamt</span><strong id="resultReserve">0 &euro;</strong></div>
+                <div class="result-item"><span>Monatliche R&uuml;cklage gesamt</span><strong id="resultMonthlyReserve">0 &euro;</strong></div>
+              </div>
+            </div>
+            <div class="result-group">
+              <h3>Aufwand</h3>
+              <div class="result-list">
+                <div class="result-item"><span>Arbeitszeit pro Jahr</span><strong id="resultYearlyHours">0 Std.</strong></div>
+                <div class="result-item"><span>Umsatz pro Arbeitsstunde</span><strong id="resultRevenueHourly">0 &euro; / Std.</strong></div>
+                <div class="result-item"><span>Abstand zum Ziel-Stundenlohn</span><strong id="resultTargetGap">-</strong></div>
+              </div>
+            </div>
+
+            <div class="insight-box" id="meaningBox">
+              <h3>Was bedeutet das f&uuml;r dich?</h3>
+              <p id="meaningText">Dein Ergebnis wird nach der Eingabe automatisch eingeordnet.</p>
+            </div>
+            <div class="insight-box" id="improvementBox">
+              <h3>Was kannst du verbessern?</h3>
+              <ul id="improvementList"></ul>
+            </div>
+            <div class="insight-box tax-choice-box" id="taxChoiceBox"></div>
+            <div class="insight-box vat-example-box" id="vatExampleBox" hidden></div>
+            <div class="warnings" id="warnings"></div>
+            <details class="more-warnings" id="moreWarnings" hidden>
+              <summary>Weitere Hinweise anzeigen</summary>
+              <div class="warnings" id="extraWarnings"></div>
+            </details>
+            <div class="copy-row">
+              <button class="button primary" type="button" id="copyResult">Ergebnis kopieren</button>
+              <span id="copyStatus" role="status"></span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-section target-section">
+        <div class="target-card" id="targetCard">
+          <div>
+            <p class="eyebrow">Zielrechnung</p>
+            <h2>Ben&ouml;tigter Umsatz f&uuml;r dein Ziel</h2>
+            <p id="targetIntro">Du m&ouml;chtest mindestens 25 &euro; netto pro Stunde verdienen.</p>
+          </div>
+          <div class="target-metrics">
+            <div><span>Umsatz pro Jahr</span><strong id="targetYearlyRevenue">0 &euro;</strong></div>
+            <div><span>Umsatz pro Monat</span><strong id="targetMonthlyRevenue">0 &euro;</strong></div>
+            <div><span>Differenz aktuell</span><strong id="targetDifference">0 &euro;</strong></div>
+          </div>
+          <p class="target-message" id="targetMessage">Grobe Modellrechnung, keine Steuerberatung.</p>
+        </div>
+      </section>
+
+      <section class="content-section comparison-section">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Vergleich</p>
+          <h2>Szenario-Vergleich</h2>
+          <p>Vergleiche, wie sich Umsatz, Ausgaben und Zeitaufwand auf dein Ergebnis auswirken.</p>
+        </div>
+        <div class="scenario-grid" id="scenarioGrid"></div>
+      </section>
+
+      <section class="content-section audience-section" id="zielgruppe">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Einordnung</p>
+          <h2>F&uuml;r wen ist der Rechner gedacht?</h2>
+        </div>
+        <div class="audience-grid">
+          <article><span class="mini-badge">01</span><h3>Angestellte mit Nebengewerbe</h3><p>Du arbeitest festangestellt und m&ouml;chtest nebenbei Geld verdienen.</p></article>
+          <article><span class="mini-badge">02</span><h3>Gr&uuml;nder im kleinen Rahmen</h3><p>Du willst testen, ob sich eine Idee wirtschaftlich lohnt, bevor du viel Zeit investierst.</p></article>
+          <article><span class="mini-badge">03</span><h3>Kleinunternehmer</h3><p>Du m&ouml;chtest verstehen, wie Umsatz, Ausgaben, Steuer und Netto zusammenh&auml;ngen.</p></article>
+        </div>
+        <p class="scope-note">Nicht geeignet f&uuml;r komplexe F&auml;lle wie GmbH, mehrere Gesellschafter, Mitarbeiter, hohe Investitionen oder internationale Ums&auml;tze.</p>
+      </section>
+
+      <section class="content-section" id="erklaerung">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Einfach erkl&auml;rt</p>
+          <h2>Wie du das Ergebnis liest</h2>
+        </div>
+        <div class="text-grid">
+          <article><h3>Gewinn ist nicht Umsatz</h3><p>Der Umsatz ist alles, was du einnimmst. Davon ziehst du deine Betriebsausgaben ab. Erst der Gewinn ist der Betrag, der grob f&uuml;r Steuer und Netto &uuml;brig bleibt.</p></article>
+          <article><h3>Steuer wird grob gesch&auml;tzt</h3><p>Der Gewinn aus dem Nebengewerbe kommt zu deinem Hauptjob hinzu. Deshalb kann der zus&auml;tzliche Gewinn mit einem h&ouml;heren Steuersatz belastet werden. Der Rechner nutzt daf&uuml;r eine vereinfachte Sch&auml;tzung.</p></article>
+          <article><h3>Stundenlohn macht den Aufwand sichtbar</h3><p>Ein Nebengewerbe kann gut klingen, aber viel Zeit kosten. Der Netto-Stundenlohn zeigt, was nach grober Steuer pro Arbeitsstunde &uuml;brig bleibt.</p></article>
+          <article><h3>Krankenversicherung beachten</h3><p>Bei gesetzlicher Krankenversicherung kann ein umfangreiches Nebengewerbe relevant werden. Entscheidend sind unter anderem Gewinn, Zeitaufwand und ob dein Hauptjob weiter im Vordergrund steht.</p></article>
+          <article><h3>Gewerbesteuer-Freibetrag</h3><p>F&uuml;r Einzelunternehmen und Personengesellschaften gibt es bei der Gewerbesteuer einen Freibetrag von 24.500 &euro; Gewerbeertrag. Darunter f&auml;llt h&auml;ufig keine Gewerbesteuer an. Oberhalb kann sie relevant werden.</p></article>
+          <article><h3>Kleinunternehmerregelung</h3><p>Seit 2025 sind vor allem zwei Grenzen wichtig: 25.000 &euro; im Vorjahr beziehungsweise im Gr&uuml;ndungsjahr und 100.000 &euro; im laufenden Jahr. Vorteil: meist keine Umsatzsteuer auf Rechnungen. Nachteil: meist kein Vorsteuerabzug.</p></article>
+        </div>
+      </section>
+
+      <section class="content-section seo-section" id="wissen">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Wissen</p>
+          <h2>Nebengewerbe einfach verstehen</h2>
+          <p>Die folgenden Abschnitte helfen dir, das Ergebnis grob einzuordnen. Sie ersetzen keine individuelle Pr&uuml;fung.</p>
+        </div>
+        <div class="seo-grid">
+          <article><h3>Nebengewerbe Steuer berechnen</h3><p>Beim Nebengewerbe wird nicht der Umsatz versteuert, sondern der Gewinn. Der Gewinn kommt zu deinem Einkommen aus dem Hauptjob hinzu. Dieser Nebenerwerb Rechner sch&auml;tzt die zus&auml;tzliche Einkommensteuer deshalb nur grob.</p></article>
+          <article><h3>Kleinunternehmerregelung</h3><p>Die Kleinunternehmerregelung kann den Start erleichtern, weil du normalerweise keine Umsatzsteuer auf deinen Rechnungen ausweist. Seit 2025 sind besonders 25.000 &euro; Vorjahresumsatz und 100.000 &euro; laufender Jahresumsatz wichtig.</p></article>
+          <article><h3>Gewerbesteuer</h3><p>F&uuml;r Einzelunternehmen und Personengesellschaften gibt es einen Freibetrag von 24.500 &euro; Gewinn beziehungsweise Gewerbeertrag. Oberhalb kann Gewerbesteuer relevant werden.</p></article>
+          <article><h3>Krankenversicherung</h3><p>Ein Nebengewerbe kann f&uuml;r die Krankenversicherung wichtig werden, wenn Gewinn und Zeitaufwand steigen. Frage im Zweifel direkt bei deiner Krankenkasse nach.</p></article>
+          <article><h3>Wie viel bleibt netto &uuml;brig?</h3><p>Netto bleibt das, was nach Ausgaben und grob gesch&auml;tzter Steuer &uuml;brig ist. Wichtig ist auch der Netto-Stundenlohn Selbstst&auml;ndigkeit, weil er den echten Aufwand sichtbar macht.</p></article>
+          <article><h3>Nebengewerbe anmelden</h3><p>Wenn du dauerhaft mit Gewinnerzielungsabsicht arbeitest, kann eine Anmeldung n&ouml;tig sein. Gewerbliche und freiberufliche T&auml;tigkeiten werden unterschiedlich behandelt.</p></article>
+        </div>
+      </section>
+
+      <section class="affiliate-section" aria-label="Empfehlungen">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Empfehlungen</p>
+          <h2>Empfohlene Tools f&uuml;r dein Nebengewerbe</h2>
+          <p>Diese Bereiche solltest du fr&uuml;h sauber aufsetzen, damit Buchhaltung, Steuern und Zahlungen nicht un&uuml;bersichtlich werden.</p>
+        </div>
+        <div class="affiliate-cards">
+          <article><span class="tool-icon">Konto</span><h3>Gesch&auml;ftskonto</h3><p>Trenne private und gesch&auml;ftliche Einnahmen von Anfang an. Das macht Buchhaltung und Steuererkl&auml;rung deutlich einfacher.</p><a class="button secondary" href="#">Gesch&auml;ftskonto vergleichen</a></article>
+          <article><span class="tool-icon">Tool</span><h3>Buchhaltungstool</h3><p>Schreibe Rechnungen, erfasse Ausgaben und behalte deine Zahlen im Blick.</p><a class="button secondary" href="#">Buchhaltungstool ansehen</a></article>
+          <article><span class="tool-icon">Docs</span><h3>Rechnungen &amp; Vorlagen</h3><p>Nutze saubere Rechnungen, Angebotsvorlagen und Checklisten f&uuml;r deinen Start.</p><a class="button secondary" href="#">Vorlagen ansehen</a></article>
+        </div>
+        <p class="affiliate-note">Hinweis: Einige Links k&ouml;nnen Empfehlungslinks sein. F&uuml;r dich entstehen dadurch keine Mehrkosten.</p>
+      </section>
+
+      <section class="content-section faq" id="faq">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>H&auml;ufige Fragen zum Nebengewerbe</h2>
+        </div>
+        <details open><summary>Muss ich ein Nebengewerbe anmelden?</summary><p>Wenn du dauerhaft mit Gewinnerzielungsabsicht t&auml;tig bist, musst du in vielen F&auml;llen ein Gewerbe anmelden. Freiberufliche T&auml;tigkeiten k&ouml;nnen anders behandelt werden. Im Zweifel solltest du beim Gewerbeamt oder steuerlich nachfragen.</p></details>
+        <details><summary>Muss ich meinem Arbeitgeber das Nebengewerbe melden?</summary><p>Das h&auml;ngt von Arbeitsvertrag, Tarifvertrag und T&auml;tigkeit ab. H&auml;ufig muss ein Nebengewerbe angezeigt oder genehmigt werden. Es darf deinen Hauptjob nicht beeintr&auml;chtigen und keine Konkurrenz zum Arbeitgeber darstellen.</p></details>
+        <details><summary>Muss ich Umsatzsteuer ausweisen?</summary><p>Wenn du die Kleinunternehmerregelung nutzt, weist du in der Regel keine Umsatzsteuer aus. Bei Regelbesteuerung musst du grunds&auml;tzlich Umsatzsteuer berechnen und ans Finanzamt abf&uuml;hren.</p></details>
+        <details><summary>Was ist die Kleinunternehmerregelung?</summary><p>Die Kleinunternehmerregelung kann den Start erleichtern. Du weist meist keine Umsatzsteuer aus, kannst aber in der Regel auch keine Vorsteuer aus Eingangsrechnungen ziehen. Ab 2025 sind insbesondere 25.000 &euro; und 100.000 &euro; Umsatzgrenzen relevant.</p></details>
+        <details><summary>Wie viel sollte ich f&uuml;r Steuern zur&uuml;cklegen?</summary><p>Viele legen vorsichtig 30 bis 40 Prozent des Gewinns zur&uuml;ck. Der Rechner zeigt dir eine grobe empfohlene R&uuml;cklage. Die echte Steuer kann abweichen.</p></details>
+        <details><summary>Muss ich Krankenversicherung extra zahlen?</summary><p>Bei einem kleinen Nebengewerbe neben einem sozialversicherungspflichtigen Hauptjob oft nicht automatisch. Wenn Gewinn oder Zeitaufwand stark steigen, kann die Krankenkasse die T&auml;tigkeit anders einordnen. Kl&auml;re das direkt mit deiner Krankenkasse.</p></details>
+        <details><summary>Wann lohnt sich ein Nebengewerbe nicht?</summary><p>Wenn nach Ausgaben und Steuern nur wenig &uuml;brig bleibt oder der Netto-Stundenlohn sehr niedrig ist, lohnt es sich wirtschaftlich oft nicht. F&uuml;r Erfahrung, Aufbau oder sp&auml;tere Skalierung kann es trotzdem sinnvoll sein.</p></details>
+        <details><summary>Was passiert, wenn ich Verlust mache?</summary><p>Ein Verlust kann steuerlich relevant sein, muss aber zur T&auml;tigkeit passen. Dauerhafte Verluste k&ouml;nnen problematisch werden, wenn das Finanzamt keine Gewinnerzielungsabsicht erkennt.</p></details>
+        <details><summary>Muss ich eine Steuererkl&auml;rung machen?</summary><p>Mit Nebengewerbe oder selbstst&auml;ndigen Eink&uuml;nften musst du in der Regel eine Steuererkl&auml;rung abgeben und den Gewinn erkl&auml;ren, zum Beispiel &uuml;ber eine Einnahmen&uuml;berschussrechnung.</p></details>
+        <details><summary>Was ist besser: Kleinunternehmer oder Regelbesteuerung?</summary><p>Das h&auml;ngt von deinen Kunden und Kosten ab. Wenn du vor allem Privatkunden hast und geringe Ausgaben, kann Kleinunternehmer einfach sein. Wenn du viele Investitionen hast oder Gesch&auml;ftskunden bedienst, kann Regelbesteuerung sinnvoller sein.</p></details>
+      </section>
+
+      <section class="legal-section" id="rechtliches">
+        <div class="section-heading compact-heading legal-heading">
+          <p class="eyebrow">Rechtliches</p>
+          <h2>Rechtliches &amp; Hinweise</h2>
+          <p class="section-lead">Hier findest du Impressum, Datenschutz, Haftungsausschluss und Hinweise zur Nutzung des Rechners.</p>
+        </div>
+        <div class="legal-accordion">
+          <details id="impressum">
+            <summary>Impressum</summary>
+            <div class="legal-content">
+            <h3>Angaben gem&auml;&szlig; &sect; 5 DDG</h3>
+            <address>
+              Nebenerwerbsrechner<br />
+              Patrick Dzierzawski<br />
+              Segnitzstr. 6<br />
+              97422 Schweinfurt<br />
+              Deutschland
+            </address>
+            <h4 id="kontakt">Kontakt</h4>
+            <p>E-Mail: patick.dzierzawski@icloud.com</p>
+            <h4>Verantwortlich f&uuml;r den Inhalt nach &sect; 18 Abs. 2 MStV</h4>
+            <address>
+              Nebenerwerbsrechner<br />
+              Patrick Dzierzawski<br />
+              Segnitzstr. 6<br />
+              97422 Schweinfurt<br />
+              Deutschland
+            </address>
+            </div>
+          </details>
+
+          <details id="datenschutz">
+            <summary>Datenschutzerkl&auml;rung</summary>
+            <div class="legal-content">
+            <p>Diese Website verarbeitet Eingaben des Rechners lokal im Browser. Die eingegebenen Werte werden nicht an einen Server &uuml;bertragen, sofern keine zus&auml;tzlichen Analyse-, Tracking-, Kontaktformular- oder Drittanbieterfunktionen eingebunden werden.</p>
+            <h4>Verantwortlicher</h4>
+            <address>
+              Nebenerwerbsrechner<br />
+              Patrick Dzierzawski<br />
+              Segnitzstr. 6<br />
+              97422 Schweinfurt<br />
+              Deutschland<br />
+              E-Mail: patick.dzierzawski@icloud.com
+            </address>
+            <h4>Verarbeitung von Rechner-Eingaben</h4>
+            <p>Die im Rechner eingegebenen Werte werden nur zur unmittelbaren Berechnung im Browser genutzt. Eine Speicherung auf einem Server findet nicht statt.</p>
+            <h4>Server-Logfiles</h4>
+            <p>Beim Aufruf der Website k&ouml;nnen durch den Hosting-Anbieter technisch notwendige Zugriffsdaten verarbeitet werden, zum Beispiel IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Datei, Browsertyp und Betriebssystem. Diese Verarbeitung erfolgt zur technischen Bereitstellung, Sicherheit und Stabilit&auml;t der Website.</p>
+            <h4>Cookies und Tracking</h4>
+            <p>Diese Website verwendet derzeit keine eigenen Tracking-Cookies und keine Analyse-Tools. Falls sp&auml;ter Analyse-, Werbe- oder Affiliate-Dienste eingebunden werden, muss diese Datenschutzerkl&auml;rung entsprechend erweitert werden.</p>
+            <h4>Affiliate-Links</h4>
+            <p>Falls sp&auml;ter Empfehlungs- oder Affiliate-Links eingebunden werden, kann der Betreiber dieser Website eine Provision erhalten, wenn Nutzer &uuml;ber solche Links ein Angebot wahrnehmen. F&uuml;r Nutzer entstehen dadurch keine Mehrkosten.</p>
+            <h4>Rechtsgrundlagen</h4>
+            <p>Soweit personenbezogene Daten verarbeitet werden, erfolgt dies insbesondere auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch sicheren und funktionsf&auml;higen Bereitstellung der Website.</p>
+            <h4>Betroffenenrechte</h4>
+            <p>Nutzer haben nach Ma&szlig;gabe der DSGVO insbesondere das Recht auf Auskunft, Berichtigung, L&ouml;schung, Einschr&auml;nkung der Verarbeitung, Widerspruch sowie Beschwerde bei einer zust&auml;ndigen Datenschutzaufsichtsbeh&ouml;rde.</p>
+            <h4>Stand</h4>
+            <p>Mai 2026</p>
+            </div>
+          </details>
+
+          <details id="haftungsausschluss">
+            <summary>Haftungsausschluss &amp; keine Beratung</summary>
+            <div class="legal-content">
+            <h4>Keine Steuerberatung</h4>
+            <p>Der Nebenerwerbsrechner dient ausschlie&szlig;lich der groben Orientierung. Die Inhalte und Ergebnisse ersetzen keine individuelle Steuer-, Rechts- oder Versicherungsberatung.</p>
+            <h4>Berechnungen</h4>
+            <p>Alle Berechnungen sind vereinfachte Sch&auml;tzungen. Steuerliche, sozialversicherungsrechtliche und rechtliche Folgen h&auml;ngen vom Einzelfall ab.</p>
+            <h4>Keine Gew&auml;hr f&uuml;r Berechnungen</h4>
+            <p>Es wird keine Gew&auml;hr f&uuml;r Richtigkeit, Vollst&auml;ndigkeit oder Aktualit&auml;t der Berechnungen und Inhalte &uuml;bernommen.</p>
+            <h4>Externe Links</h4>
+            <p>F&uuml;r Inhalte externer Websites, auf die verlinkt wird, ist der jeweilige Anbieter verantwortlich.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Affiliate-Hinweis</summary>
+            <div class="legal-content">
+              <p>Falls sp&auml;ter Empfehlungs- oder Affiliate-Links eingebunden werden, kann der Betreiber dieser Website eine Provision erhalten, wenn Nutzer &uuml;ber solche Links ein Angebot wahrnehmen. F&uuml;r Nutzer entstehen dadurch keine Mehrkosten.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-links" aria-label="Footer Navigation">
+        <a href="#rechtliches">Impressum</a>
+        <a href="#rechtliches">Datenschutz</a>
+        <a href="#rechtliches">Haftungsausschluss</a>
+        <a href="#rechtliches">Kontakt</a>
+      </div>
+      <p>Alle Berechnungen sind vereinfachte Sch&auml;tzungen. Keine Steuer-, Rechts- oder Versicherungsberatung.</p>
+      <span>Stand der Berechnungslogik: 2026</span>
+    </footer>
+
+    <script src="app.js?v=20260528l"></script>
+  </body>
+</html>
